@@ -1,0 +1,15 @@
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MusicBox.exe.config
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MusicBox.exe
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MusicBox.pdb
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csprojAssemblyReference.cache
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MainWindow.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\App.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox_MarkupCompile.cache
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox_MarkupCompile.lref
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MainWindow.baml
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.g.resources
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.Properties.Resources.resources
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csproj.GenerateResource.cache
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csproj.CoreCompileInputs.cache
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.exe
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.pdb
