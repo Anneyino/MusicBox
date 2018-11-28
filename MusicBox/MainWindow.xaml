@@ -15,7 +15,7 @@
         <Button x:Name="LastButton" Content="《《" HorizontalAlignment="Left" Margin="39,476,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="LastButton_Click"/>
         <TextBox HorizontalAlignment="Left" Height="35" Margin="21,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" FontSize="18"/>
         <Button x:Name="SearchButton" Content="搜" HorizontalAlignment="Left" Margin="339,60,0,0" VerticalAlignment="Top" Width="45" Height="35" FontWeight="Bold"/>
-        <Button x:Name="ShowListButton" Content="打开歌单" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Width="75" Height="35"/>
+        <Button x:Name="ShowListButton" Content="打开歌单" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="ShowListButton_Click"/>
         <Button x:Name="OpenButton" Content="打开" HorizontalAlignment="Left" Margin="156,552,0,0" VerticalAlignment="Top" Width="77" Height="41" Click="OpenButton_Click"/>
         <Label Content="上一首" HorizontalAlignment="Left" Margin="47,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.115,0.177" Width="55"/>
         <Label x:Name="ControlLabel" Content="播放" HorizontalAlignment="Left" Margin="177,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.115,0.177" Height="26" Width="42"/>
