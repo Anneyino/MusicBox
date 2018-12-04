@@ -13,3 +13,6 @@ C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.cspro
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csproj.CoreCompileInputs.cache
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.exe
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.pdb
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MySql.Data.dll
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MySql.Data.xml
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csproj.CopyComplete

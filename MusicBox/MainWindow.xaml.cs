@@ -52,7 +52,7 @@ namespace MusicBox
             InitializeComponent();
             CoverBox.Source = new BitmapImage(new Uri(@"Covers/cover1.jpg", UriKind.Relative));
             this.Closing += Window_Closing;
-    
+            Console.WriteLine(DateTime.Now.ToShortDateString().ToString());
         }
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +131,8 @@ namespace MusicBox
                                 }else if((currentSeconds == totalSeconds) && (mode == playMode.ListLoop))
                                 {
                                     currentSeconds = 0;
-                                    nextSongFunc();
+                                    nextSongFuncForListLoop();
+                                    Mainplayer.Play();
                                 }                                                              
                                 
                             });
@@ -189,16 +190,6 @@ namespace MusicBox
 
         private void ChangeModelButton_Click(object sender, RoutedEventArgs e)
         {
-            /*if (isLooped)
-            {
-                isLooped = false;
-                ChangeModelButton.Content = "顺序播放";
-            }
-            else
-            {
-                isLooped = true;
-                ChangeModelButton.Content = "单曲循环";
-            }*/
             if(mode == playMode.SinglePlay)
             {
                 mode = playMode.SingleLoop;
@@ -230,7 +221,7 @@ namespace MusicBox
 
         private void nextSongFunc()
         {
-            //isUpload = false;
+            
             int SongNo;
             if (songList.Contains(currentSong))
             {
@@ -239,25 +230,39 @@ namespace MusicBox
                 {
                     currentSong = (Song)songList[SongNo + 1];
                     updateSong(currentSong.Song_path);
-                    /*Mainplayer.Play();
-                    isPlaying = true;
-                    ControlLabel.Content = "暂停";
-                    ControlButton.Content = "| |";*/
                 }
                 else if (SongNo + 1 == songList.Count)
                 {
                     currentSong = (Song)songList[0];
                     updateSong(currentSong.Song_path);
-                    /*Mainplayer.Play();
-                    isPlaying = true;
-                    ControlLabel.Content = "暂停";
-                    ControlButton.Content = "| |";*/
                 }
             }
         }
+        //用于列表循环的next函数
+        private void nextSongFuncForListLoop()
+        {
+
+            int SongNo;
+            if (songList.Contains(currentSong))
+            {
+                SongNo = songList.IndexOf(currentSong);
+                if (SongNo + 1 < songList.Count)
+                {
+                    currentSong = (Song)songList[SongNo + 1];
+                    updateSongWithoutResetThread(currentSong.Song_path);
+                }
+                else if (SongNo + 1 == songList.Count)
+                {
+                    currentSong = (Song)songList[0];
+                    updateSongWithoutResetThread(currentSong.Song_path);
+                }
+            }
+        }
+
+
         private void lastSongFunc()
         {
-            //isUpload = false;
+            
             int SongNo;
             if (songList.Contains(currentSong))
             {
@@ -266,19 +271,12 @@ namespace MusicBox
                 {
                     currentSong = (Song)songList[SongNo - 1];
                     updateSong(currentSong.Song_path);
-                    /*Mainplayer.Play();
-                    isPlaying = true;
-                    ControlLabel.Content = "暂停";
-                    ControlButton.Content = "| |";*/
                 }
                 else if (SongNo == 0)
                 {
                     currentSong = (Song)songList[songList.Count - 1];
+
                     updateSong(currentSong.Song_path);
-                    /*Mainplayer.Play();
-                    isPlaying = true;
-                    ControlLabel.Content = "暂停";
-                    ControlButton.Content = "| |";*/
                 }
             }
         }
@@ -337,7 +335,7 @@ namespace MusicBox
                 }
             }
         }
-
+        //不把进度条线程重置同时更新歌曲信息
         private void updateSongWithoutResetThread(string path)
         {
             string songTitle = System.IO.Path.GetFileNameWithoutExtension(path);
@@ -351,9 +349,9 @@ namespace MusicBox
             CurrentTimeLabel.Content = "00:00/";
             currentTimeSpan = new TimeSpan(0, 0, 0);
             totalSeconds = 10000;
-            isPlaying = false;
-            ControlLabel.Content = "播放";
-            ControlButton.Content = "►";
+            isPlaying = true;
+            ControlLabel.Content = "暂停";
+            ControlButton.Content = "| |";
             /*重置数据完成*/
 
             while (true)
@@ -375,7 +373,7 @@ namespace MusicBox
             }
             currentSeconds = 0;
         }
-
+        //进度条线程重置函数
         private void ThreadReset()
         {
             if (thread != null)
