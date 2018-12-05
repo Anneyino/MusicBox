@@ -16,3 +16,9 @@ C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.pdb
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MySql.Data.dll
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\bin\Debug\MySql.Data.xml
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\MusicBox.csproj.CopyComplete
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Add_Interface.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Login_Interface.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Search_Interface.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Add_Interface.baml
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Login_Interface.baml
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Search_Interface.baml

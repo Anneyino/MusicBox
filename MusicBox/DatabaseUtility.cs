@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,19 +10,19 @@ namespace MusicBox
 {
     class DatabaseUtility
     {
-        private static User currentUser;
+        private static User currentUser = new User();
         private static string connDatabase = "MusicBox";
         private static string connHost = "localhost";
         private static string constr;
 
-        public void setUser(string name, string passwrd)
+        public static void setUser(string name, string passwrd)
         {
             currentUser.UserName = name;
             currentUser.Password = passwrd;
             constr = string.Format("Database={0};Data Source={1};User Id={2};Password={3};Charset=utf8", connDatabase, connHost,name,passwrd);
         }
 
-        private static MySqlConnection openConn()
+        public static MySqlConnection openConn()
 
         {
 
@@ -82,6 +83,149 @@ namespace MusicBox
             conn.Close();
 
             return 1;// 1 means everything is right
+        }
+
+        public static int removeSong(int songID)
+
+        {
+
+            MySqlConnection conn = openConn();
+
+            if (conn == null)
+
+                return -1;  // -1 means cannot connect to database
+
+            string sqlStr = string.Format("DELETE FROM Songs WHERE song_id = {0};", songID);
+
+            MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
+
+            if (cmd.ExecuteNonQuery() == 0)
+
+            {
+
+                conn.Close();
+
+                return -2; // no such song
+
+            }
+
+            conn.Close();
+
+            return 1;// 1 means everything is right
+
+
+
+        }
+
+        public static int updateSongName(string songName, int songId)
+
+        {
+
+            MySqlConnection conn = openConn();
+
+
+
+            if (conn == null)
+
+                return -1;
+
+            string sqlStr = string.Format("UPDATE Songs SET song_name = '{0}' WHERE song_id = '{1}' ", songName, songId);
+
+            MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
+
+            if (cmd.ExecuteNonQuery() == 0)
+
+            {
+
+                return 0; // error
+
+            }
+
+            return 1;
+
+        }
+
+        public static int getAllSongs(ref ArrayList songs)
+        {
+            MySqlConnection conn = openConn();
+            if(conn == null)
+            {
+                return -1;
+            }
+            string sqlStr = string.Format("SELECT * FROM Songs");
+            MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
+
+            MySqlDataReader read = cmd.ExecuteReader();
+
+            songs = new ArrayList();
+            while (read.Read())
+            {
+                Song song = new Song();
+                song.Song_id = read.GetInt32("song_id");
+                song.Song_name = read.GetString("song_name");
+                song.Song_path = read.GetString("song_path");
+                song.Publish_date = read.GetDateTime("publish_date");
+                songs.Add(song);
+            }
+            read.Close();
+            conn.Close();
+            return 1;
+        }
+
+        public static int getSongById(ref Song song, int ID)
+        {
+            MySqlConnection conn = openConn();
+            if (conn == null)
+            {
+                return -1;
+            }
+            string sqlStr = string.Format("SELECT * FROM Songs WHERE song_id = '{0}'", ID);
+            MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
+
+            MySqlDataReader read = cmd.ExecuteReader();
+
+            if (!read.Read())
+            {
+
+                return -2;    // no such song
+            }
+            else
+            {
+                song.Song_id = read.GetInt32("song_id");
+                song.Song_name = read.GetString("song_name");
+                song.Song_path = read.GetString("song_path");
+                song.Publish_date = read.GetDateTime("publish_date");
+            }
+            read.Close();
+            conn.Close();
+            return 1;
+        }
+
+        public static int getSongsByName(ref ArrayList songs, string songName)
+        {
+            MySqlConnection conn = openConn();
+            if (conn == null)
+            {
+                return -1;
+            }
+            string sqlStr = string.Format("SELECT * FROM Songs WHERE song_name like '%{0}%'", songName);
+            MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
+
+            MySqlDataReader read = cmd.ExecuteReader();
+
+            songs = new ArrayList();
+            while (read.Read())
+            {
+                Song song = new Song();
+                song.Song_id = read.GetInt32("song_id");
+                song.Song_name = read.GetString("song_name");
+                song.Song_path = read.GetString("song_path");
+                song.Publish_date = read.GetDateTime("publish_date");
+                songs.Add(song);
+            }
+            read.Close();
+            conn.Close();
+            return 1;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Media;
 
 namespace MusicBox
 {
-    class Song
+    public class Song
     {
         private int song_id;
         private string song_name;

@@ -55,6 +55,15 @@ namespace MusicBox
             Console.WriteLine(DateTime.Now.ToShortDateString().ToString());
         }
 
+        public Song GetCurrentSong()
+        {
+            return currentSong;
+        }
+
+        public void SetCurrentSong(Song song)
+        {
+            currentSong = song;
+        }
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -116,7 +125,7 @@ namespace MusicBox
                                         this.MusicProgress.Value = 0;
                                         CurrentTimeLabel.Content = "00:00/";
                                         currentTimeSpan = new TimeSpan(0, 0, 0);
-                                        Mainplayer.Open(new Uri(filepath, UriKind.Absolute));
+                                        Mainplayer.Open(new Uri(filepath, UriKind.RelativeOrAbsolute));
                                         Mainplayer.Pause();
                                         thread = null;
                                         
@@ -126,7 +135,7 @@ namespace MusicBox
                                     currentSeconds = 0;
                                     this.MusicProgress.Value = 0;
                                     currentTimeSpan = new TimeSpan(0, 0, 0);
-                                    Mainplayer.Open(new Uri(filepath, UriKind.Absolute));
+                                    Mainplayer.Open(new Uri(filepath, UriKind.RelativeOrAbsolute));
                                     Mainplayer.Play();
                                 }else if((currentSeconds == totalSeconds) && (mode == playMode.ListLoop))
                                 {
@@ -296,11 +305,11 @@ namespace MusicBox
 
         }
 
-        private void updateSong(string path)
+        public void updateSong(string path)
         {
             string songTitle = System.IO.Path.GetFileNameWithoutExtension(path);
             StateLabel.Content = songTitle;
-            Mainplayer.Open(new Uri(path, UriKind.Absolute));
+            Mainplayer.Open(new Uri(path, UriKind.RelativeOrAbsolute));
 
             /*重置数据*/
             filepath = path;
@@ -340,7 +349,7 @@ namespace MusicBox
         {
             string songTitle = System.IO.Path.GetFileNameWithoutExtension(path);
             StateLabel.Content = songTitle;
-            Mainplayer.Open(new Uri(path, UriKind.Absolute));
+            Mainplayer.Open(new Uri(path, UriKind.RelativeOrAbsolute));
 
             /*重置数据*/
             filepath = path;
@@ -367,12 +376,13 @@ namespace MusicBox
                     MusicProgress.Maximum = totalSeconds;
                     TotalTimeLabel.Content = timestr;
                     ControlButton.IsEnabled = true;
-                    ControlButton.Content = "►";
                     break;
                 }
             }
             currentSeconds = 0;
         }
+
+        //从数据库中读取音乐来进行播放的函数
         //进度条线程重置函数
         private void ThreadReset()
         {
@@ -400,11 +410,29 @@ namespace MusicBox
         }
 
         private void ShowListButton_Click(object sender, RoutedEventArgs e)
-        {   
-            string path1 = System.IO.Directory.GetCurrentDirectory();
-            path1 += "/SongList/V.A. - 心の海域(オルゴール).mp3";
-            Mainplayer.Open(new Uri(path1, UriKind.Absolute));
-            Mainplayer.Play();
+        {
+            //string path1 = System.IO.Directory.GetCurrentDirectory();
+            //path1 += "/SongList/Joker.mp3";
+            /*string path1 = "SongList/Joker.mp3";
+            Mainplayer.Open(new Uri(path1, UriKind.Relative));
+            Mainplayer.Play();*/
+            string contents = "";
+            Search_Interface search_Interface = new Search_Interface(contents);
+            search_Interface.ShowDialog();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchBox.Text == "")
+            {
+                MessageBox.Show("搜索内容不能为空");
+            }
+            else
+            {
+                string contents = SearchBox.Text;
+                Search_Interface search_Interface = new Search_Interface(contents);
+                search_Interface.ShowDialog();
+            }
         }
     }
 }
