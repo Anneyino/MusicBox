@@ -44,9 +44,10 @@ namespace MusicBox
             if (File.Exists(songpath))
             {
                 PathTextBox.Text = songpath;
+                string realpath = songpath.Replace("\\","\\\\");
                 string songTitle = System.IO.Path.GetFileNameWithoutExtension(songpath);
                 tempsong.Song_name = songTitle;
-                tempsong.Song_path = songpath;
+                tempsong.Song_path = realpath;
             }
         }
 
@@ -73,6 +74,7 @@ namespace MusicBox
                 {
                     MessageBox.Show("试图添加重复的歌曲名!");
                 }
+                
             }
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicBox"
         mc:Ignorable="d"
-        Title="修改界面" Height="178.393" Width="713.214">
+        Title="修改界面" Height="178.393" Width="713.214" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

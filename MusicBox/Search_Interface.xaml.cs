@@ -73,6 +73,10 @@ namespace MusicBox
                     this.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("请选中一首歌曲进行播放!");
+            }
             
         }
 

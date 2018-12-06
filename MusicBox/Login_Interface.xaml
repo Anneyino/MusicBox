@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicBox"
         mc:Ignorable="d"
-        Title="Login_Interface" Height="438.75" Width="513.929">
+        Title="Login_Interface" Height="438.75" Width="513.929" ResizeMode="NoResize">
     <Grid Margin="0,0,3.6,3.6">
-        <Button x:Name="LoginButton" Content="登录" HorizontalAlignment="Left" Margin="163,337,0,0" VerticalAlignment="Top" Width="189" Height="40" RenderTransformOrigin="0.335,0.309" Click="LoginButton_Click" FontSize="18"/>
-        <TextBox x:Name="UserNameBox" HorizontalAlignment="Left" Height="37" Margin="163,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
-        <TextBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="39" Margin="163,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
-        <Label Content="用户名" HorizontalAlignment="Left" Margin="77,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.467" FontSize="18"/>
-        <Label Content="密码" HorizontalAlignment="Left" Margin="77,235,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="使用您的Mysql用户登录" HorizontalAlignment="Left" Margin="143,83,0,0" VerticalAlignment="Top" Height="31" Width="233" FontSize="18"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="229*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="LoginButton" Content="登录" HorizontalAlignment="Left" Margin="132.6,337,0,0" VerticalAlignment="Top" Width="189" Height="40" RenderTransformOrigin="0.335,0.309" Click="LoginButton_Click" FontSize="18" Grid.Column="1"/>
+        <TextBox x:Name="UserNameBox" HorizontalAlignment="Left" Height="37" Margin="132.6,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Grid.Column="1" FontSize="20"/>
+        <TextBox x:Name="PasswordBox" HorizontalAlignment="Left" Height="39" Margin="132.6,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Grid.Column="1" FontSize="20"/>
+        <Label Content="用户名" HorizontalAlignment="Left" Margin="46.6,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.467" FontSize="18" Height="34" Width="64" Grid.Column="1"/>
+        <Label Content="密码" HorizontalAlignment="Left" Margin="46.6,235,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="46" Grid.Column="1"/>
+        <Label Content="使用您的Mysql用户登录" HorizontalAlignment="Left" Margin="112.6,83,0,0" VerticalAlignment="Top" Height="31" Width="233" FontSize="18" Grid.Column="1"/>
 
     </Grid>
 </Window>
