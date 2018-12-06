@@ -18,9 +18,9 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="PlayButton" Grid.ColumnSpan="2" Content="播放选中歌曲" HorizontalAlignment="Left" Margin="230,69,0,0" VerticalAlignment="Top" Width="136" Height="38" Click="PlayButton_Click"/>
-        <Button x:Name="AddToDatabaseButton" Grid.ColumnSpan="2" Content="添加新歌曲到数据库" HorizontalAlignment="Left" Margin="428,69,0,0" VerticalAlignment="Top" Width="140" Height="38" Click="AddToDatabaseButton_Click"/>
-        <Button x:Name="RemoveButton" Grid.ColumnSpan="2" Content="删除选中歌曲" HorizontalAlignment="Left" Margin="624,69,0,0" VerticalAlignment="Top" Width="136" Height="38" Click="RemoveButton_Click"/>
+        <Button x:Name="PlayButton" Grid.ColumnSpan="2" Content="播放选中歌曲" HorizontalAlignment="Left" Margin="132,69,0,0" VerticalAlignment="Top" Width="136" Height="38" Click="PlayButton_Click"/>
+        <Button x:Name="AddToDatabaseButton" Grid.ColumnSpan="2" Content="添加新歌曲到数据库" HorizontalAlignment="Left" Margin="330,69,0,0" VerticalAlignment="Top" Width="140" Height="38" Click="AddToDatabaseButton_Click"/>
+        <Button x:Name="RemoveButton" Grid.ColumnSpan="2" Content="删除选中歌曲" HorizontalAlignment="Left" Margin="714,69,0,0" VerticalAlignment="Top" Width="136" Height="38" Click="RemoveButton_Click"/>
         <ListView x:Name="SongListView" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="245" Margin="99,140,0,0" VerticalAlignment="Top" Width="804" ItemsSource="{Binding}">
             <ListView.View>
                 <GridView>
@@ -34,6 +34,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="ModifyNameButton" Grid.ColumnSpan="2" Content="修改选中歌曲名" HorizontalAlignment="Left" Margin="528,69,0,0" VerticalAlignment="Top" Width="139" RenderTransformOrigin="0.779,0.274" Height="38" Click="ModifyNameButton_Click"/>
 
     </Grid>
 </Window>

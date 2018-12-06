@@ -133,11 +133,13 @@ namespace MusicBox
 
             MySqlCommand cmd = new MySqlCommand(sqlStr, conn);
 
-            if (cmd.ExecuteNonQuery() == 0)
-
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }catch(Exception e)
             {
 
-                return 0; // error
+                return -2; // error
 
             }
 

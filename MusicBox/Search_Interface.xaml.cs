@@ -106,5 +106,15 @@ namespace MusicBox
                 MessageBox.Show("请选中一个数据库项来删除！");
             }
         }
+
+        private void ModifyNameButton_Click(object sender, RoutedEventArgs e)
+        {
+            string ss = "";
+            DataRowView drv = SongListView.SelectedItem as DataRowView;
+            ss = drv["song_id"].ToString();
+            int ID = int.Parse(ss);
+            Modify_Interface modify_Interface = new Modify_Interface(ID);
+            modify_Interface.ShowDialog();
+        }
     }
 }

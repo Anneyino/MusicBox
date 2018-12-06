@@ -11,12 +11,12 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="PublishDateBox" HorizontalAlignment="Left" Height="44" Margin="97,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Grid.Column="1"/>
-        <Label Content="出版日期" HorizontalAlignment="Left" Margin="97,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.081,0.422" Grid.Column="1" Height="26" Width="79"/>
-        <Button x:Name="OpenFileButton" Content="打开" HorizontalAlignment="Left" Margin="325,75,0,0" VerticalAlignment="Top" Width="130" Height="35" Grid.Column="1" Click="OpenFileButton_Click"/>
-        <TextBox x:Name="PathTextBox" HorizontalAlignment="Left" Height="35" Margin="96,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" Grid.Column="1"/>
-        <Button x:Name="AddButton" Content="加入数据库" HorizontalAlignment="Left" Margin="97,282,0,0" VerticalAlignment="Top" Width="224" Height="41" Grid.Column="1" Click="AddButton_Click"/>
-        <Label Content="路径" HorizontalAlignment="Left" Margin="96,34,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="41"/>
+        <TextBox x:Name="PublishDateBox" HorizontalAlignment="Left" Height="44" Margin="97,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243" Grid.Column="1" FontSize="24"/>
+        <Label Content="出版日期 示例(2005-05-21)" HorizontalAlignment="Left" Margin="97,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.081,0.422" Grid.Column="1" Height="32" Width="243" FontSize="18"/>
+        <Button x:Name="OpenFileButton" Content="打开" HorizontalAlignment="Left" Margin="362,74,0,0" VerticalAlignment="Top" Width="130" Height="35" Grid.Column="1" Click="OpenFileButton_Click" FontSize="16"/>
+        <TextBox x:Name="PathTextBox" HorizontalAlignment="Left" Height="35" Margin="96,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" Grid.Column="1" FontSize="20"/>
+        <Button x:Name="AddButton" Content="加入数据库" HorizontalAlignment="Left" Margin="97,282,0,0" VerticalAlignment="Top" Width="224" Height="41" Grid.Column="1" Click="AddButton_Click" FontSize="18"/>
+        <Label Content="路径" HorizontalAlignment="Left" Margin="96,34,0,0" VerticalAlignment="Top" Grid.Column="1" Height="36" Width="66" FontSize="18"/>
 
     </Grid>
 </Window>
