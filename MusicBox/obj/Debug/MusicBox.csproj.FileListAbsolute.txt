@@ -24,3 +24,5 @@ C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Login_Interfac
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Search_Interface.baml
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Modify_Interface.g.cs
 C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Modify_Interface.baml
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Help_Interface.g.cs
+C:\Users\Anneyino\Desktop\WindowsProg\MusicBox\MusicBox\obj\Debug\Help_Interface.baml

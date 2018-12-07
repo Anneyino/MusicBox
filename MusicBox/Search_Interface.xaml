@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicBox"
         mc:Ignorable="d"
-        Title="搜索结果" Height="450" Width="1000" ResizeMode="NoResize">
+        Title="搜索结果" Height="450" Width="1000" ResizeMode="NoResize" Background="#FFD69201">
     <Grid Margin="0,0,-6.4,0">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="124*"/>
+            <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

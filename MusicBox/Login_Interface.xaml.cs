@@ -29,7 +29,7 @@ namespace MusicBox
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string  username = UserNameBox.Text;
-            string passwrd = PasswordBox.Text;
+            string passwrd = passwrdBox.Password;
             if ((username != "") && (passwrd != ""))
             {
                 DatabaseUtility.setUser(username, passwrd);
@@ -51,6 +51,12 @@ namespace MusicBox
             {
                 MessageBox.Show("用户名密码不能为空!");
             }
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Interface help_Interface = new Help_Interface();
+            help_Interface.ShowDialog();
         }
     }
 }

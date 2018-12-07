@@ -74,6 +74,11 @@ namespace MusicBox
                 {
                     MessageBox.Show("试图添加重复的歌曲名!");
                 }
+                else
+                {
+                    MainWindow.search_Interface.reloadDatabase();
+                    MessageBox.Show("添加成功!");
+                }
                 
             }
         }

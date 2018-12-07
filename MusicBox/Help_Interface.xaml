@@ -1,0 +1,17 @@
+﻿<Window x:Class="MusicBox.Help_Interface"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicBox"
+        mc:Ignorable="d"
+        Title="帮助" Height="424.688" Width="443.215" ResizeMode="NoResize" Background="#FFD0D90F">
+    <Grid Margin="0,0,3.6,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="372" Margin="10,10,0,0" TextWrapping="Wrap" Text="产品介绍：&#xD;&#xA;&#xD;&#xA;本应用属于一个基于Mysql数据库的音乐播放软件，允许用户从本地选取音乐文件进行自主播放或是保存到本地的数据库中；同样地，用户可以将数据库中的音乐进行直接地播放。值得一提的是保存在数据库中的音乐的主要信息只包含歌曲名称，歌曲路径以及出版日期，实际读取的是用户本地加载完成的音乐文件，因此如果用户在程序外主动删除音乐文件会造成音乐文件的缺失而无法播放数据库中的音乐，请多加注意。&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;MySQL登录：&#xD;&#xA;&#xD;&#xA;可以选择本机的mysql用户进行登录来连接到本地数据库，注意登陆前需要把目录下的Music.sql脚本文件执行成功来导入数据库，否则会提示未导入数据。&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;操作方法：&#xD;&#xA;&#xD;&#xA;与大多数音乐播放软件相同，本程序包括歌曲的时长进度条的显示，音乐的暂停与继续，同时还支持3种基本的播放模式：单曲播放，单曲循环以及列表循环。其中列表循环是通过把当前导入的歌曲加入当前歌单中来实现的。注意每次启动程序时，初始的当前歌单总为空。&#xD;&#xA;" VerticalAlignment="Top" Width="413" IsEnabled="False" Background="#FFE7FF2A" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

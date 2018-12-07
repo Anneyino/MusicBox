@@ -29,7 +29,7 @@ namespace MusicBox
             reloadDatabase();
         }
 
-        private void reloadDatabase()
+        public void reloadDatabase()
         {
             ArrayList songList = new ArrayList();
             int state = DatabaseUtility.getSongsByName(ref songList, contents);
@@ -87,23 +87,28 @@ namespace MusicBox
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
-        {
+        {   
             if (SongListView.SelectedItem != null)
             {
-                string ss = "";
-                DataRowView drv = SongListView.SelectedItem as DataRowView;
-                ss = drv["song_id"].ToString();
-                int ID = int.Parse(ss);
-                int state = DatabaseUtility.removeSong(ID);
-                if (state == -1)
+                MessageBoxResult result = MessageBox.Show("确定从数据库中删除该歌曲吗？", "询问", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
                 {
-                    MessageBox.Show("无法连接到数据库!");
+                    string ss = "";
+                    DataRowView drv = SongListView.SelectedItem as DataRowView;
+                    ss = drv["song_id"].ToString();
+                    int ID = int.Parse(ss);
+                    int state = DatabaseUtility.removeSong(ID);
+                    if (state == -1)
+                    {
+                        MessageBox.Show("无法连接到数据库!");
+                    }
+                    else if (state == -2)
+                    {
+                        MessageBox.Show("无法删除改项!");
+                    }
+                    reloadDatabase();
                 }
-                else if(state == -2)
-                {
-                    MessageBox.Show("无法删除改项!");
-                }
-                reloadDatabase();
+                
             }
             else
             {

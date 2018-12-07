@@ -31,13 +31,14 @@ namespace MusicBox
         public bool isThreadActive = false;//线程是否处于活跃,用来安全的中止线程;
         MediaPlayer Mainplayer = new MediaPlayer();
         public bool isPlaying = false;//是否正处于播放状态
-        //public bool isUpload = false;//判断是否处于上传音乐的状态,如果是，则在updateSong函数中执行ThreadReset.
+        
         public int totalSeconds = 0;
         public int currentSeconds = 0;
         public TimeSpan currentTimeSpan = new TimeSpan(0, 0, 0);
         public TimeSpan incrementSpan = new TimeSpan(0, 0, 1);
         public ArrayList songList = new ArrayList();//当前歌单
         private Song currentSong;
+        public static Search_Interface search_Interface;
 
         public enum playMode
         {
@@ -139,9 +140,24 @@ namespace MusicBox
                                     Mainplayer.Play();
                                 }else if((currentSeconds == totalSeconds) && (mode == playMode.ListLoop))
                                 {
-                                    currentSeconds = 0;
-                                    nextSongFuncForListLoop();
-                                    Mainplayer.Play();
+                                    if (songList.Count != 0)
+                                    {
+                                        currentSeconds = 0;
+                                        nextSongFuncForListLoop();
+                                        Mainplayer.Play();
+                                    }
+                                    else
+                                    {
+                                        isPlaying = false;
+                                        ControlLabel.Content = "播放";
+                                        ControlButton.Content = "►";
+                                        this.MusicProgress.Value = 0;
+                                        CurrentTimeLabel.Content = "00:00/";
+                                        currentTimeSpan = new TimeSpan(0, 0, 0);
+                                        Mainplayer.Open(new Uri(filepath, UriKind.RelativeOrAbsolute));
+                                        Mainplayer.Pause();
+                                        thread = null;
+                                    }
                                 }                                                              
                                 
                             });
@@ -309,7 +325,10 @@ namespace MusicBox
         {
             string songTitle = System.IO.Path.GetFileNameWithoutExtension(path);
             StateLabel.Content = songTitle;
+
+
             Mainplayer.Open(new Uri(path, UriKind.RelativeOrAbsolute));
+
 
             /*重置数据*/
             filepath = path;
@@ -376,6 +395,7 @@ namespace MusicBox
                     MusicProgress.Maximum = totalSeconds;
                     TotalTimeLabel.Content = timestr;
                     ControlButton.IsEnabled = true;
+                    ControlButton.Content = "| |";
                     break;
                 }
             }
@@ -411,13 +431,9 @@ namespace MusicBox
 
         private void ShowListButton_Click(object sender, RoutedEventArgs e)
         {
-            //string path1 = System.IO.Directory.GetCurrentDirectory();
-            //path1 += "/SongList/Joker.mp3";
-            /*string path1 = "SongList/Joker.mp3";
-            Mainplayer.Open(new Uri(path1, UriKind.Relative));
-            Mainplayer.Play();*/
+            
             string contents = "";
-            Search_Interface search_Interface = new Search_Interface(contents);
+            search_Interface = new Search_Interface(contents);
             search_Interface.ShowDialog();
         }
 
@@ -430,9 +446,15 @@ namespace MusicBox
             else
             {
                 string contents = SearchBox.Text;
-                Search_Interface search_Interface = new Search_Interface(contents);
+                search_Interface = new Search_Interface(contents);
                 search_Interface.ShowDialog();
             }
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            Help_Interface help_Interface = new Help_Interface();
+            help_Interface.ShowDialog();
         }
     }
 }

@@ -59,6 +59,9 @@
       <DependentUpon>Add_Interface.xaml</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUtility.cs" />
+    <Compile Include="Help_Interface.xaml.cs">
+      <DependentUpon>Help_Interface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login_Interface.xaml.cs">
       <DependentUpon>Login_Interface.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
     <Compile Include="Song.cs" />
     <Compile Include="User.cs" />
     <Page Include="Add_Interface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Help_Interface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

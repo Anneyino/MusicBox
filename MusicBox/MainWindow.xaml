@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="400" ResizeMode="NoResize">
+        Title="MainWindow" Height="800" Width="400" ResizeMode="NoResize" Background="#FFCE8C13">
 
     <Grid>
         <Image x:Name="CoverBox" HorizontalAlignment="Left" Height="243" Margin="39,144,0,0" VerticalAlignment="Top" Width="314"/>
@@ -15,7 +15,7 @@
         <Button x:Name="LastButton" Content="《《" HorizontalAlignment="Left" Margin="39,476,0,0" VerticalAlignment="Top" Width="75" Height="40" Click="LastButton_Click"/>
         <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Height="35" Margin="21,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" FontSize="18"/>
         <Button x:Name="SearchButton" Content="搜" HorizontalAlignment="Left" Margin="339,60,0,0" VerticalAlignment="Top" Width="45" Height="35" FontWeight="Bold" Click="SearchButton_Click"/>
-        <Button x:Name="ShowListButton" Content="打开歌单" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="ShowListButton_Click"/>
+        <Button x:Name="ShowListButton" Content="打开歌单数据库" HorizontalAlignment="Left" Margin="280,5,0,0" VerticalAlignment="Top" Width="104" Height="35" Click="ShowListButton_Click"/>
         <Button x:Name="OpenButton" Content="打开" HorizontalAlignment="Left" Margin="156,552,0,0" VerticalAlignment="Top" Width="77" Height="41" Click="OpenButton_Click"/>
         <Label Content="上一首" HorizontalAlignment="Left" Margin="47,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.115,0.177" Width="55"/>
         <Label x:Name="ControlLabel" Content="播放" HorizontalAlignment="Left" Margin="177,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.115,0.177" Height="26" Width="42"/>
@@ -25,7 +25,8 @@
         <Label x:Name="TotalTimeLabel" Content="00:00" HorizontalAlignment="Left" Margin="195,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.245,0.508"/>
         <Button x:Name="ChangeModelButton" Content="单曲播放" HorizontalAlignment="Left" Margin="270,552,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="ChangeModelButton_Click"/>
         <Label Content="当前状态" HorizontalAlignment="Left" Margin="276,526,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.115,0.469"/>
-        <Button x:Name="AddToSongListButton" Content="添加到歌单" HorizontalAlignment="Left" Margin="39,552,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="AddToSongListButton_Click"/>
+        <Button x:Name="AddToSongListButton" Content="添加到列表" HorizontalAlignment="Left" Margin="39,552,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="AddToSongListButton_Click"/>
+        <Button x:Name="HelpButton" Content="帮助" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="61" Height="26" Click="HelpButton_Click"/>
 
     </Grid>
 </Window>
